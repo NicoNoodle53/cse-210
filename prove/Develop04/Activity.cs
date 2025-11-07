@@ -2,9 +2,9 @@ using System;
 
 public class Activity
 {
-    private string _name;
-    private string _description;
-    private int _time;
+    protected string _name;
+    protected string _description;
+    protected int _time;
     public Activity()
     {
 
@@ -15,10 +15,10 @@ public class Activity
         _description = description;
         _time = time;
     }
-    public void Loading()
+    protected void Loading(int time)
     {
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
+        DateTime futureTime = startTime.AddSeconds(time);
 
         DateTime currentTime = DateTime.Now;
         while (currentTime < futureTime)
@@ -41,7 +41,8 @@ public class Activity
     public void Ready()
     {
         Console.WriteLine("Get ready ...");
-        Loading();
+        Loading(5);
+        Console.WriteLine();
     }
     public void Intro()
     {
@@ -51,12 +52,16 @@ public class Activity
         Console.WriteLine();
         Console.WriteLine("How long, in seconds, would you like for your session?");
         _time = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+        Console.Clear();
     }
     public void Exit()
     {
         Console.WriteLine("Good job!");
-        Loading();
+        Loading(5);
+        Console.WriteLine();
         Console.WriteLine($"You have completed {_time} seconds of the {_name}");
-        Loading();
+        Loading(5);
+        Console.Clear();
     }
 }
