@@ -7,6 +7,10 @@ public class Reference
     private int _startVerse = 27;
     private int _endVerse = 27;
 
+    public Reference()
+    {
+        
+    }
     public string displayReference()
     {
         string reference;
