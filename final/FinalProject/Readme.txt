@@ -1,0 +1,1 @@
+//This is pretty straight forward. Just add units to each army. You can view whos in each army and then you can start the war. I would recommend make the terminal big so that when it clears it will clear everything.
